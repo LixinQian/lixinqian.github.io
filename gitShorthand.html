@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>git命令简写</title>
+	<style type="text/css">
+		tr {
+			border-top-width:1px; 
+			border-top-style:solid; 
+			border-top-color:rgb(204,204,204);
+			background-color:rgb(248,248,248)
+		}
+
+		td {
+			padding:6px 13px; 
+			border:1px solid 
+			rgb(221,221,221)
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>简写</th>
+			<th>正常命令</th>
+		</tr>
+		
+<tr>
+	<td>g</td>
+	<td>git</td>
+</tr>
+<tr>
+	<td>gst</td>
+	<td>git status</tr>
+<tr >
+	<td>gd</td>
+	<td>git diff
+</tr>
+<tr>
+	<td>gdc</td>
+	<td>git diff --cached</td>
+</tr>
+<tr>
+	<td>gdv</td>
+	<td>git diff -w "$@" | view </td>
+</tr>
+<tr>
+	<td>gcmsg</td>
+	<td>git commit -m</td>
+</tr>
+<tr>
+	<td>gl</td>
+	<td>git pull</td>
+</tr>
+<tr>
+	<td>gp</td>
+	<td>git push</td>
+</tr>
+<tr>
+	<td>gup</td>
+	<td>git pull --rebase</td>
+</tr>
+<tr>
+	<td>gc</td>
+	<td>git commit -v</td>
+</tr>
+<tr>
+	<td>gc!</td>
+	<td>git commit -v --amend</td>
+</tr>
+<tr>
+	<td>gca</td>
+	<td>git commit -v -a</td>
+</tr>
+<tr>
+	<td>gca!</td>
+	<td>git commit -v -a --amend</td>
+</tr>
+<tr>
+	<td>gm</td>
+	<td>git merge</td>
+</tr>
+<tr>
+	<td>grh</td>
+	<td>git reset HEAD</td>
+</tr>
+<tr >
+	<td>gco</td>
+	<td>git checkout</td>
+</tr>
+<tr>
+	<td>gcm</td>
+	<td>git checkout master</td>
+</tr>
+<tr>
+	<td>gr</td>
+	<td>git remote</td>
+</tr>
+<tr>
+	<td>grv</td>
+	<td>git remote -v</td>
+</tr>
+<tr>
+	<td>grmv</td>
+	<td>git remote rename</td>
+</tr>
+<tr>
+	<td>grrm</td>
+	<td>git remote remove</td>
+</tr>
+<tr>
+	<td>grset</td>
+	<td>git remote set-url</td>
+</tr>
+<tr>
+	<td>grup</td>
+	<td>git remote update</td>
+</tr>
+<tr>
+	<td>grbi</td>
+	<td>git rebase -i</td>
+</tr>
+<tr>
+	<td>ga</td>
+	<td>git add</td>
+</tr>
+<tr>
+	<td>gb</td>
+	<td>git branch</td>
+</tr>
+<tr>
+	<td>gba</td>
+	<td>git branch -a</td>
+</tr>
+<!-- <tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">grbc</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git rebase --continue</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">grba</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git rebase --abort</pre>
+</td>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gcount</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git shortlog -sn</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gcl</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git config --list</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gcp</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git cherry-pick</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">glg</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git log --stat --max-count=10</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">glgg</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git log --graph --max-count=10</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">glgga</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git log --graph --decorate --all</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">glo</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git log --oneline --decorate --color</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">glog</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git log --oneline --decorate --color --graph</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gss</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git status -s</pre>
+</td>
+</tr> -->
+<tr>
+	<td>grh</td>
+	<td>git reset HEAD</td>
+</tr>
+<tr>
+	<td>grhh</td>
+	<td>git reset HEAD --hard</td>
+</tr>
+<tr>
+	<td>gclean</td>
+	<td>git reset --hard &amp;&amp; git clean -dfx</td>
+</tr>
+<!-- <tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gwc</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git whatchanged -p --abbrev-commit --pretty=medium</pre>
+</td>
+</tr> -->
+<tr>
+	<td>gpoat</td>
+	<td >git push origin --all &amp;&amp; git push origin --tags</td>
+</tr>
+<!-- <tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gmt</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git mergetool --no-prompt</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gg</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git gui citool</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gga</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git gui citool --amend</pre>
+</td>
+</tr>
+<tr>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gk</pre>
+</td>
+<td>
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gitk --all --branches</pre>
+</td>
+</tr> -->
+<tr>
+	<td>gsts</td>
+	<td>git stash show --text</td>
+</tr>
+<tr>
+	<td>gsta</td>
+	<td>git stash</td>
+</tr>
+<tr>
+	<td>gstp</td>
+	<td>git stash pop</td>
+</tr>
+
+<tr>
+	<td>gstd</td>
+	<td>git stash drop</td>
+</tr>
+<!-- <tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">grt</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">cd $(git rev-parse --show-toplevel || echo ".")</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git-svn-dcommit-push</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git svn dcommit &amp;&amp; git push github master:svntrunk</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204); background-color:rgb(248,248,248)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gsr</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git svn rebase</pre>
+</td>
+</tr>
+<tr style="border-top-width:1px; border-top-style:solid; border-top-color:rgb(204,204,204)">
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">gsd</pre>
+</td>
+<td style="padding:6px 13px; border:1px solid rgb(221,221,221)">
+<pre style="overflow:auto; font-family:Consolas,'Liberation Mono',Menlo,Courier,monospace; font-size:14px; margin-top:0px; margin-bottom:16px; line-height:1.45; padding:16px; word-wrap:normal; background-color:rgb(247,247,247)">git svn dcommit</pre>
+</td>
+</tr> -->
+</table>
+	
+</body>
+</html>
