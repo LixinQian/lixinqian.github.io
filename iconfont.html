@@ -23,7 +23,7 @@ function check(){
     while(arr = re.exec(txt)){
         var array2 = arr[0].split('\n');
         var temp = array2[1];
-        var value = temp.slice(3,temp.length);
+        var value = temp.slice(3,temp.length-1);
         console.log(array2[0] + ":" + value);
         html += "@\""+array2[0]+"\":@\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
         html2 += "@\""+array2[0]+"\":@\"\\U0000"+value+"\", @1:@\""+array2[0]+"\", \\ <br/>";
