@@ -9,6 +9,9 @@
         <img src="copy.jpg" style="width:600px;">
         <h1>二 输入复制的文本</h1>
         <textarea id="txt" rows="10" style="width:300px;"></textarea>
+        <h6>是否需要前缀。如需要，直接填写，不填写，默认没有前缀</h6>
+        <input type="text" name="prefix">
+        <br/>
         <input type="submit" value="转换代码" onclick="check();">
         <h1>三 获得代码替换程序代码</h1>
         <div class="helps"><h4>直接替换方法</h4><pre id="result"></pre></div>
@@ -17,6 +20,7 @@
 <script type="text/javascript">
 function check(){
     txt = document.getElementById("txt").value;
+    pre = document.gettElementsByName("prefix").value;
     var re = /[^\n]+\n\&#x[^\n]+;/g;
     html = "+ (NSDictionary*)IconDictionary<br/>{<br/>    return @{<br/>";
     html2 = "#define kTBCityIconDictionary   @{\\<br/>";
@@ -25,8 +29,8 @@ function check(){
         var temp = array2[1];
         var value = temp.slice(3,temp.length-1);
         console.log(array2[0] + ":" + value);
-        html += "@\""+array2[0]+"\":@\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
-        html2 += "@\""+array2[0]+"\":@\"\\U0000"+value+"\", @1:@\""+array2[0]+"\", \\ <br/>";
+        html += "@\""+pre+array2[0]+"\":@\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
+        html2 += "@\""+pre+array2[0]+"\":@\"\\U0000"+value+"\", @1:@\""+array2[0]+"\", \\ <br/>";
     }
     html += "@\"\":@\"\"};<br/>}";
     html2 += "@\"\":@\"\"}<br/>";
