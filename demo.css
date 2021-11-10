@@ -63,13 +63,32 @@ margin: 0 auto;
 }
 .main h1{font-size:36px; color:#333; text-align:left;margin-bottom:30px; border-bottom: 1px solid #eee;}
 
-.helps{margin-top:40px;}
+.helps{
+  margin-top:40px;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+
 .helps pre{
   padding:20px;
   margin:10px 0;
   border:solid 1px #e7e1cd;
   background-color: #fffdef;
-  overflow: auto;
+  min-width: 90%;
+  min-height: 50px;
+  flex: auto;
+}
+.OCCopy{
+  width: 40px;
+  height: 20px;
+  right: -20px;
+  flex: none;
+}
+.SwiftCopy{
+  width: 40px;
+  height: 20px;
+  right: -20px;
+ flex: none;
 }
 
 .icon_lists{

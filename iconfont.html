@@ -17,29 +17,49 @@
         <br/>
         <input type="submit" value="转换代码" style="margin-top: 20px" onclick="check();">
         <h1>三 获得代码替换程序代码</h1>
-        <div class="helps"><h4>直接替换方法</h4><pre id="result"></pre></div>
-        <div class="helps"><h4>带注释</h4><pre id="result2"></pre></div>
+
+        <h4>OC版本直接替换方法</h4>
+        <div class="helps">
+            <pre id="result"></pre>
+            <button class="OCCopy" onclick="copyText(1)"> 复制 </button>
+        </div> 
+
+        <h4>Swift版本直接替换方法</h4>
+        <div class="helps">
+            <pre id="result2"></pre>
+            <button class="SwiftCopy" onclick="copyText(2)"> 复制 </button>
+        </div>
     </div>
 <script type="text/javascript">
-function check(){
-    txt = document.getElementById("txt").value;
-    pre = document.getElementById("prefix").value;
-    var re = /[^\n]+\n\&#x[^\n]+;/g;
-    html = "+ (NSDictionary*)IconDictionary<br/>{<br/>    return @{<br/>";
-    html2 = "#define kTBCityIconDictionary   @{\\<br/>";
-    while(arr = re.exec(txt)){
-        var array2 = arr[0].split('\n');
-        var temp = array2[1];
-        var value = temp.slice(3,temp.length-1);
-        console.log(array2[0] + ":" + value);
-        html += "@\""+pre+array2[0]+"\":@\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
-        html2 += "@\""+pre+array2[0]+"\":@\"\\U0000"+value+"\", @1:@\""+array2[0]+"\", \\ <br/>";
+    function check(){
+        txt = document.getElementById("txt").value;
+        pre = document.getElementById("prefix").value;
+        var re = /[^\n]+\n\&#x[^\n]+;/g;
+        html = "@{<br/>";
+        html2 = "[<br/>";
+        while(arr = re.exec(txt)){
+            var array2 = arr[0].split('\n');
+            var temp = array2[1];
+            var value = temp.slice(3,temp.length-1);
+            console.log(array2[0] + ":" + value);
+            html += "@\""+pre+array2[0]+"\" : @\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
+            html2 += "\""+pre+array2[0]+"\" : \"\\u{"+value+"}\", // "+array2[0]+" <br/>";
+        }
+        html += " };<br/>";
+        html2 += " ]<br/>";
+        document.getElementById("result").innerHTML = html;
+        document.getElementById("result2").innerHTML = html2;
     }
-    html += "@\"\":@\"\"};<br/>}";
-    html2 += "@\"\":@\"\"}<br/>";
-    document.getElementById("result").innerHTML = html;
-    document.getElementById("result2").innerHTML = html2;
-}
+    function copyText(type) {debugger
+        var text = ""
+        if (type === 1) {
+            text = document.getElementById("result").innerText;
+        } else {
+            text = document.getElementById("result2").innerText;
+        }
+        document.execCommand(text); // 执行浏览器复制命令
+        alert("复制成功");
+    }
 </script>
 
 
