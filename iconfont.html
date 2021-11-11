@@ -57,8 +57,17 @@
         } else {
             text = document.getElementById("result2").innerText;
         }
-        document.execCommand(text); // 执行浏览器复制命令
-        alert("复制成功");
+
+        const aux = document.createElement('textarea');
+        aux.value = text;
+        aux.setAttribute('readonly', 'readonly');
+        document.body.appendChild(aux);
+        aux.setSelectionRange(0, aux.value.length-1);
+        if (document.execCommand('copy')) {
+            document.execCommand('copy');
+            alert("复制成功");
+        }
+        document.body.removeChild(aux);
     }
 </script>
 
