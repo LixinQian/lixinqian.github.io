@@ -1,23 +1,26 @@
-<html><head>
+<html>
+
+<head>
     <meta charset="utf-8">
     <title>IconFont转换</title>
     <link rel="stylesheet" href="demo.css">
 </head>
+
 <body>
     <div class="main">
         <h1>一 打开iconfont官网或者浏览器打开 demo.html 复制图标区域文字</h1>
         <img src="copy.jpg" style="width:600px;">
         <h1>二 输入复制的文本</h1>
         <textarea id="txt" rows="10" style="width:330px;"></textarea>
-        <br/>
+        <br />
         <span style="font-size:10px">是否需要前缀。如需要，直接填写，不填写，默认没有前缀</span>
-        <br/>
-        <span style="color: red;font-size:10px">备注：新应用图标项目，一定要输入“qy-”，App导航图标项目一定要输入“tab-”</span><br/>
+        <br />
+        <span style="color: red;font-size:10px">备注：新应用图标项目，一定要输入“qy-”，App导航图标项目一定要输入“tab-”</span><br />
         <input id="prefix" type="text" name="prefix">
-        <br/>
+        <br />
         <input type="submit" value="转换代码" style="margin-top: 20px" onclick="check();">
         <h1>三 获得代码替换程序代码</h1>
-        
+
         <h4>Swift版本直接替换方法</h4>
         <div class="helps">
             <pre id="result2"></pre>
@@ -28,48 +31,51 @@
         <div class="helps">
             <pre id="result"></pre>
             <button class="OCCopy" onclick="copyText(1)"> 复制 </button>
-        </div> 
+        </div>
     </div>
-<script type="text/javascript">
-    function check(){
-        txt = document.getElementById("txt").value;
-        pre = document.getElementById("prefix").value;
-        var re = /[^\n]+\n\&#x[^\n]+;/g;
-        html = "@{<br/>";
-        html2 = "[<br/>";
-        while(arr = re.exec(txt)){
-            var array2 = arr[0].split('\n');
-            var temp = array2[1];
-            var value = temp.slice(3,temp.length-1);
-            console.log(array2[0] + ":" + value);
-            html += "@\""+pre+array2[0]+"\" : @\"\\U0000"+value+"\", // "+array2[0]+" <br/>";
-            html2 += "\""+pre+array2[0]+"\" : \"\\u{"+value+"}\", // "+array2[0]+" <br/>";
-        }
-        html += " };<br/>";
-        html2 += " ]<br/>";
-        document.getElementById("result").innerHTML = html;
-        document.getElementById("result2").innerHTML = html2;
-    }
-    function copyText(type) {
-        var text = ""
-        if (type === 1) {
-            text = document.getElementById("result").innerText;
-        } else {
-            text = document.getElementById("result2").innerText;
+    <script type="text/javascript">
+        function check() {
+            txt = document.getElementById("txt").value;
+            pre = document.getElementById("prefix").value;
+            var re = /[^\n]+\n\&#x[^\n]+;/g;
+            html = "@{<br/>";
+            html2 = "[<br/>";
+            while (arr = re.exec(txt)) {
+                var array2 = arr[0].split('\n');
+                var temp = array2[1];
+                var value = temp.slice(3, temp.length - 1);
+                console.log(array2[0] + ":" + value);
+                html += "@\"" + pre + array2[0] + "\" : @\"\\U0000" + value + "\", // " + array2[0] + " <br/>";
+                html2 += "\"" + pre + array2[0] + "\": \"\\u{" + value + "}\", // " + array2[0] + " <br/>";
+            }
+            html += " };<br/>";
+            html2 += " ]<br/>";
+            document.getElementById("result").innerHTML = html;
+            document.getElementById("result2").innerHTML = html2;
         }
 
-        const aux = document.createElement('textarea');
-        aux.value = text;
-        aux.setAttribute('readonly', 'readonly');
-        document.body.appendChild(aux);
-        aux.setSelectionRange(0, aux.value.length-1);
-        if (document.execCommand('copy')) {
-            document.execCommand('copy');
-            alert("复制成功");
+        function copyText(type) {
+            var text = ""
+            if (type === 1) {
+                text = document.getElementById("result").innerText;
+            } else {
+                text = document.getElementById("result2").innerText;
+            }
+
+            const aux = document.createElement('textarea');
+            aux.value = text;
+            aux.setAttribute('readonly', 'readonly');
+            document.body.appendChild(aux);
+            aux.setSelectionRange(0, aux.value.length - 1);
+            if (document.execCommand('copy')) {
+                document.execCommand('copy');
+                alert("复制成功");
+            }
+            document.body.removeChild(aux);
         }
-        document.body.removeChild(aux);
-    }
-</script>
+    </script>
 
 
-</body></html>
+</body>
+
+</html>
